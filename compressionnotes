@@ -1,4 +1,10 @@
 What we did:
 
 
-In order to compress the classes, I changed all classes that were above 0 to 1 
+In order to compress the classes, I changed all classes that were above 0 to 1, so that instead of having different variations of levels of the disease, there is only a boolean of whether they have it or not.
+
+This also results in the improvement of accuracy of the classifications for both methods involved here.
+We now see that J48 correctly classifies 77.8878% of instances, and Naive Bayes correctly classifies 84.1584% of instances. This is because, as there are less classes, there is much less sparse data which removes a lot of the ambiguity causing the error margin that we previously saw before the compression.
+
+
+To elaborate on the data being 'less sparse' - before the compression, our data set has a very unequal amount of instances in each class. For example - for the levels of who has heart disease scaling from 0 to 4 where 4 is most prominent, we see that 0 has 164 instancesand 4 has 13 instances. This is not ideal as machine learning is not as efficient with unequal class instances as there will be a bias towards the class that has the most within it. When the comparison is made, it's possible that the class with the most instances will be chosen simply because the chances are high that the instance belongs in that class. It could also be said that the comparison between classes will be less accurate (or efficient) when there is so little within the class. In this case, we see that class 4 has 13 instances - meaning that the proof that an instance belongs in said class may not be reliable as there is not much training data within the class.
