@@ -8,3 +8,6 @@ We now see that J48 correctly classifies 77.8878% of instances, and Naive Bayes 
 
 
 To elaborate on the data being 'less sparse' - before the compression, our data set has a very unequal amount of instances in each class. For example - for the levels of who has heart disease scaling from 0 to 4 where 4 is most prominent, we see that 0 has 164 instancesand 4 has 13 instances. This is not ideal as machine learning is not as efficient with unequal class instances as there will be a bias towards the class that has the most within it. When the comparison is made, it's possible that the class with the most instances will be chosen simply because the chances are high that the instance belongs in that class. It could also be said that the comparison between classes will be less accurate (or efficient) when there is so little within the class. In this case, we see that class 4 has 13 instances - meaning that the proof that an instance belongs in said class may not be reliable as there is not much training data within the class.
+
+Once we compress the four classes into two - we find that the instance count within them are much more equal. When making comparisons, there is much less chance that the assumption made will be that an instance belongs to one class simply because that's where the majority of others has gone to.
+
